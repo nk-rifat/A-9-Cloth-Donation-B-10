@@ -4,10 +4,10 @@ import logo from '../../assets/logo.png';
 const Navbar = () => {
 
     const links = <>
-        <li><NavLink to='/'>Home</NavLink></li>
-        <li><NavLink to='/donation'>Donation Campaigns</NavLink></li>
-        <li><NavLink to='/help'>How To Help</NavLink></li>
-        <li><NavLink to='/dashboard'>Dashboard</NavLink></li>
+        <li className="text-lg font-medium"><NavLink to='/'>Home</NavLink></li>
+        <li className="text-lg font-medium"><NavLink to='/donation'>Campaigns</NavLink></li>
+        <li className="text-lg font-medium"><NavLink to='/help'>Dashboard</NavLink></li>
+        <li className="text-lg font-medium"><NavLink to='/dashboard'>How To Help</NavLink></li>
     </>
 
     return (
