@@ -3,7 +3,7 @@ import img2 from '../../assets/group.jpg';
 import img3 from '../../assets/Sweater-03.png';
 const Banner = () => {
     return (
-        <div className="carousel w-full h-[600px] rounded-lg">
+        <div className="carousel w-full lg:h-[600px] rounded-lg">
             <div id="slide1" className="carousel-item relative w-full">
                 <img
                     src={img2}

@@ -1,0 +1,83 @@
+[
+    {
+      "id": 1,
+      "title": "Warm Hearts Initiative",
+      "image": "https://example.com/images/warm-hearts.jpg",
+      "description": "Providing winter clothing for underprivileged families in Dhaka.",
+      "status": "Ongoing",
+      "contact_info": "contact@winterhope.org",
+      "division": "Dhaka"
+    },
+    {
+      "id": 2,
+      "title": "Keep Sylhet Warm",
+      "image": "https://example.com/images/keep-sylhet-warm.jpg",
+      "description": "A donation drive for distributing blankets and jackets in Sylhet.",
+      "status": "Upcoming",
+      "contact_info": "sylhet@winterhope.org",
+      "division": "Sylhet"
+    },
+    {
+      "id": 3,
+      "title": "Rajshahi Winter Aid",
+      "image": "https://example.com/images/rajshahi-aid.jpg",
+      "description": "Helping the elderly and children stay warm in Rajshahi.",
+      "status": "Completed",
+      "contact_info": "rajshahi@winterhope.org",
+      "division": "Rajshahi"
+    },
+    {
+      "id": 4,
+      "title": "Chattogram Care",
+      "image": "https://example.com/images/chattogram-care.jpg",
+      "description": "Winter clothing distribution in remote areas of Chattogram.",
+      "status": "Ongoing",
+      "contact_info": "chattogram@winterhope.org",
+      "division": "Chattogram"
+    },
+    {
+      "id": 5,
+      "title": "Kurigram Winter Support",
+      "image": "https://example.com/images/kurigram-support.jpg",
+      "description": "Helping flood-affected people with warm clothes in Rangpur.",
+      "status": "Ongoing",
+      "contact_info": "rangpur@winterhope.org",
+      "division": "Rangpur"
+    },
+    {
+      "id": 6,
+      "title": "Mymensingh Warmth Drive",
+      "image": "https://example.com/images/mymensingh-warmth.jpg",
+      "description": "Donating sweaters and gloves to underprivileged children in Mymensingh.",
+      "status": "Upcoming",
+      "contact_info": "mymensingh@winterhope.org",
+      "division": "Mymensingh"
+    },
+    {
+      "id": 7,
+      "title": "Khulna Blanket Drive",
+      "image": "https://example.com/images/khulna-blanket.jpg",
+      "description": "Spreading warmth with blanket donations in Khulna's rural areas.",
+      "status": "Ongoing",
+      "contact_info": "khulna@winterhope.org",
+      "division": "Khulna"
+    },
+    {
+      "id": 8,
+      "title": "Barisal Shelter Assistance",
+      "image": "https://example.com/images/barisal-shelter.jpg",
+      "description": "Providing winter essentials to homeless people in Barisal.",
+      "status": "Completed",
+      "contact_info": "barisal@winterhope.org",
+      "division": "Barisal"
+    },
+    {
+      "id": 9,
+      "title": "Comilla Community Warmth",
+      "image": "https://example.com/images/comilla-warmth.jpg",
+      "description": "Distributing warm clothing to struggling families in Comilla.",
+      "status": "Ongoing",
+      "contact_info": "comilla@winterhope.org",
+      "division": "Comilla"
+    }
+  ]
