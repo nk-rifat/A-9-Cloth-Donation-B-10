@@ -1,7 +1,11 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from '../../assets/logo.png';
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Navbar = () => {
+
+    const {user} = useContext(AuthContext);
 
     const links = <>
         <li className="text-lg font-medium"><NavLink to='/'>Home</NavLink></li>

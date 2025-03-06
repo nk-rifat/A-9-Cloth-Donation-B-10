@@ -1,9 +1,44 @@
+import { useContext, useState } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
+import { useNavigate } from "react-router-dom";
+
 const Register = () => {
+
+    const { registerUser, setUser,updateUserProfile } = useContext(AuthContext);
+    const [errro, setError] = useState('');
+    const navigate = useNavigate();
+
+    const handleRegister = e => {
+        e.preventDefault();
+
+        const name = e.target.name.value;
+        const photo = e.target.photo.value;
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+
+        registerUser(email, password)
+            .then(result => {
+                const user = result.user;
+                updateUserProfile({displayName: name, photoURL: photo})
+                .then(() =>{
+                    navigate('/');
+                })
+                setUser(user);
+                console.log(user)
+            })
+            .catch(error => {
+                const err = error.message;
+                setError(err);
+            });
+        e.target.reset('');
+    }
+
+
     return (
         <div className="min-h-screen flex justify-center items-center">
             <div className="card bg-base-100 w-full  max-w-sm shrink-0 shadow-2xl p-8">
                 <h2 className="text-2xl text-center mt-6 font-bold">Register your account</h2>
-                <form className="card-body">
+                <form onSubmit={handleRegister} className="card-body">
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Name</span>
