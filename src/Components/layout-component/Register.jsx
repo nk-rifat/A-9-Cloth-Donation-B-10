@@ -24,13 +24,12 @@ const Register = () => {
                     navigate('/');
                 })
                 setUser(user);
-                console.log(user)
             })
             .catch(error => {
                 const err = error.message;
                 setError(err);
             });
-        e.target.reset('');
+        e.target.reset();
     }
 
 

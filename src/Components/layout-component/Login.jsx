@@ -1,11 +1,13 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const Login = () => {
+    const navigate = useNavigate();
 
     const {loginUser, setUser} = useContext(AuthContext);
     const [error, setError] = useState('');
+    console.log(error)
 
     const handleLogin = e => {
         e.preventDefault();
@@ -17,13 +19,14 @@ const Login = () => {
         .then(result => {
             const user = result.user;
             setUser(user);
+            navigate('/');
         })
         .catch(error => {
             const err = error.message;
             setError(err);
         });
-        e.target.reset('');
-    }
+        e.target.reset();
+    };
 
     return (
         <div className="min-h-screen flex justify-center items-center">

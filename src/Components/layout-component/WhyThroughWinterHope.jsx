@@ -1,4 +1,5 @@
 import { FaHandsHelping, FaTshirt, FaUsers, FaShieldAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 
 const WhyThroughWinterHope = () => {
@@ -53,7 +54,7 @@ const WhyThroughWinterHope = () => {
                     ))}
                 </div>
 
-                <button className="btn btn-primary mt-8">Donate Now</button>
+                <Link to='/campaigns' className="btn btn-primary mt-8">Donate Now</Link>
             </div>
         </section>
     );
