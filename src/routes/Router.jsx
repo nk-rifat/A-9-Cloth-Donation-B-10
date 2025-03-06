@@ -3,6 +3,9 @@ import HomeLayOuts from "../layouts/HomeLayOuts";
 import Error from "../Components/layout-component/Error";
 import Campaigns from "../layouts/Campaigns";
 import DonationDetails from "../Pages/DonationDetails";
+import AuthLayout from "../layouts/AuthLayout";
+import Login from "../Components/layout-component/Login";
+import Register from "../Components/layout-component/Register";
 
 const Router = createBrowserRouter([
     {
@@ -19,6 +22,20 @@ const Router = createBrowserRouter([
         path: '/campaigns/:id',
         element: <DonationDetails></DonationDetails>,
         loader: () => fetch('/campaigns.json')
+    },
+    {
+        path: 'auth',
+        element: <AuthLayout></AuthLayout>,
+        children: [
+            {
+                path: '/auth/login',
+                element: <Login></Login>
+            },
+            {
+                path: '/auth/register',
+                element: <Register></Register>
+            }
+        ]
     }
 ])
 

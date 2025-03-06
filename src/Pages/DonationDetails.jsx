@@ -1,6 +1,7 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import Navbar from "../Components/layout-component/Navbar";
 import Footer from "../Components/layout-component/Footer";
+import { toast } from "react-toastify";
 const DonationDetails = () => {
 
     const campaigns = useLoaderData();
@@ -10,6 +11,14 @@ const DonationDetails = () => {
     const matchId = campaigns.find(data => data.id === clickId);
 
     const { title, image, description, division, status, contact_info } = matchId;
+
+    const handleSubmit = e => {
+        e.preventDefault();
+        e.target.reset();
+        toast('Thank you.! We will reach your destination soon');
+
+
+    }
 
     return (
         <div>
@@ -36,7 +45,7 @@ const DonationDetails = () => {
                 {/* Donation Form */}
                 <div className="  bg-white p-6 rounded-lg shadow-md lg:w-1/2 flex flex-col">
                     <h2 className="text-2xl font-bold mb-4">Donate Items</h2>
-                    <form className="space-y-4 flex flex-col flex-grow">
+                    <form onSubmit={handleSubmit} className="space-y-4 flex flex-col flex-grow">
                         <div>
                             <label className="block text-sm font-medium">Quantity</label>
                             <input
