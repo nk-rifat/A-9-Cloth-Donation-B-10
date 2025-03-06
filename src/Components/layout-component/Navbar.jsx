@@ -6,25 +6,28 @@ import { AuthContext } from "../../Provider/AuthProvider";
 const Navbar = () => {
     const navigate = useNavigate();
 
-    const { setUser,user, userSignOut, signInWithGoogle } = useContext(AuthContext);
+    const { setUser, user, userSignOut, signInWithGoogle } = useContext(AuthContext);
 
     const links = <>
         <li className="text-lg font-medium"><NavLink to='/'>Home</NavLink></li>
         <li className="text-lg font-medium"><NavLink to='/campaigns'>Campaigns</NavLink></li>
-        <li className="text-lg font-medium"><NavLink to='/help'>Dashboard</NavLink></li>
+        {
+            user &&
+            <li className="text-lg font-medium"><NavLink to='/help'>Dashboard</NavLink></li>
+        }
         <li className="text-lg font-medium"><NavLink to='/dashboard'>How To Help</NavLink></li>
     </>;
 
     const handleGoogleSignIn = () => {
         signInWithGoogle()
-        .then(result => {
-            const user = result.user;
-            setUser(user);
-            navigate('/');
-        })
-        .catch(error => {
-            console.log(error.message)
-        })
+            .then(result => {
+                const user = result.user;
+                setUser(user);
+                navigate('/');
+            })
+            .catch(error => {
+                console.log(error.message)
+            })
     };
 
     return (
@@ -67,10 +70,10 @@ const Navbar = () => {
                         <div className="flex items-center gap-3">
                             <img className="h-12 w-12 rounded-full" src={user?.photoURL} alt="" />
                             <button onClick={userSignOut} className="btn">Log-out</button>
-                        </div> 
+                        </div>
                         :
                         <div className="flex gap-3">
-                            <Link onClick={handleGoogleSignIn} to='/'  className="btn">Login With Google</Link>
+                            <Link onClick={handleGoogleSignIn} to='/' className="btn">Login With Google</Link>
                             <Link to='/auth/login' className="btn">Login</Link>
                         </div>
                 }
