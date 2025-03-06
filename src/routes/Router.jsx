@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import HomeLayOuts from "../layouts/HomeLayOuts";
 import Error from "../Components/layout-component/Error";
 import Campaigns from "../layouts/Campaigns";
+import DonationDetails from "../Pages/DonationDetails";
 
 const Router = createBrowserRouter([
     {
@@ -12,7 +13,12 @@ const Router = createBrowserRouter([
     {
         path: 'campaigns',
         element: <Campaigns></Campaigns>,
-        loader: () => fetch('campaigns.json')
+        loader: () => fetch('/campaigns.json'),
+    },
+    {
+        path: '/campaigns/:id',
+        element: <DonationDetails></DonationDetails>,
+        loader: () => fetch('/campaigns.json')
     }
 ])
 

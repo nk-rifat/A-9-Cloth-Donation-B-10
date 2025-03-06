@@ -4,7 +4,6 @@ import Footer from "../Components/layout-component/Footer";
 import HowItWorks from "../Components/layout-component/HowItWorks";
 import Navbar from "../Components/layout-component/Navbar";
 import WhyThroughWinterHope from "../Components/layout-component/WhyThroughWinterHope";
-import WhyDonate from "../Components/layout-component/WhyThroughWinterHope";
 
 const HomeLayOuts = () => {
     return (
