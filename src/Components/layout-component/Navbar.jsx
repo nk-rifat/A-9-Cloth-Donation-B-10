@@ -56,7 +56,7 @@ const Navbar = () => {
                 </div>
                 <div className="flex justify-center items-center">
                     <img className="h-12 w-12 rounded-xl" src={logo} alt="" />
-                    <a className="btn btn-ghost text-xl">WinterHope</a>
+                    <a className="btn btn-ghost text-xl hidden sm:block ">WinterHope</a>
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">

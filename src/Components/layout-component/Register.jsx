@@ -4,8 +4,8 @@ import { useNavigate } from "react-router-dom";
 
 const Register = () => {
 
-    const { registerUser, setUser,updateUserProfile } = useContext(AuthContext);
-    const [errro, setError] = useState('');
+    const { registerUser, setUser, updateUserProfile } = useContext(AuthContext);
+    const [error, setError] = useState('');
     const navigate = useNavigate();
 
     const handleRegister = e => {
@@ -16,13 +16,20 @@ const Register = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
 
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+
+        if (!passwordRegex.test(password)) {
+            setError('password length should be 6 with one Uppercase and one Lowercase');
+            return;
+        }
+
         registerUser(email, password)
             .then(result => {
                 const user = result.user;
-                updateUserProfile({displayName: name, photoURL: photo})
-                .then(() =>{
-                    navigate('/');
-                })
+                updateUserProfile({ displayName: name, photoURL: photo })
+                    .then(() => {
+                        navigate('/');
+                    })
                 setUser(user);
             })
             .catch(error => {
@@ -64,6 +71,11 @@ const Register = () => {
                         </label>
                         <input name="password" type="password" placeholder="password" className="input input-bordered" required />
                     </div>
+
+                    {
+                        error && <p className="text-red-500">{error}</p>
+                    }
+
                     <div className="form-control mt-6">
                         <button className="btn btn-neutral w-full">Register</button>
                     </div>

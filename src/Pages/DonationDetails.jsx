@@ -22,7 +22,7 @@ const DonationDetails = () => {
 
     return (
         <div>
-            <nav className="w-11/12 mx-auto">
+            <nav className="w-11/12 mx-auto mt-8">
                 <Navbar></Navbar>
             </nav>
             <div className="w-11/12 mx-auto mt-8 flex flex-col lg:flex-row gap-9 md:gap-6 sm:gap-4">

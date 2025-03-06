@@ -48,6 +48,11 @@ const Login = () => {
                             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                         </label>
                     </div>
+
+                    {
+                        error && <p className="text-red-500">{error}</p>
+                    }
+                    
                     <div className="form-control mt-6">
                         <button className="btn btn-neutral w-full">Login</button>
                     </div>
