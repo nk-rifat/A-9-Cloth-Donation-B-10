@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyClXi00-sjdM0yLx3uAwG1-d40tiOvmDGw",
-    authDomain: "winter-hope-8200c.firebaseapp.com",
-    projectId: "winter-hope-8200c",
-    storageBucket: "winter-hope-8200c.firebasestorage.app",
-    messagingSenderId: "598610316347",
-    appId: "1:598610316347:web:ad2a93ab62d87fe29ca01e"
+    apiKey: import.meta.env.VITE_apiKey,
+    authDomain: import.meta.env.VITE_authDomain,
+    projectId: import.meta.env.VITE_projectId,
+    storageBucket: import.meta.env.storageBucket,
+    messagingSenderId: import.meta.env.VITE_messagingSenderId,
+    appId: import.meta.env.VITE_appId,
 };
 
 // Initialize Firebase

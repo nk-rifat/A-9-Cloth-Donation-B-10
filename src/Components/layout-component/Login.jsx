@@ -10,7 +10,6 @@ const Login = () => {
 
     const {loginUser, setUser} = useContext(AuthContext);
     const [error, setError] = useState('');
-    console.log(error)
 
     const handleLogin = e => {
         e.preventDefault();
