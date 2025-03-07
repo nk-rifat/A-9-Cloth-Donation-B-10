@@ -22,7 +22,7 @@ const DashboardLayout = () => {
                     />
                     <p className="text-lg mt-4">Name: {user?.displayName}</p>
                     <p className="text-lg">Email: {user?.email}</p>
-                    <Link to="/update-profile">
+                    <Link to="/updateProfile">
                         <button className="btn btn-primary mt-4">Update Profile</button>
                     </Link>
                 </div>

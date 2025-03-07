@@ -15,6 +15,7 @@ const Navbar = () => {
             user &&
             <li className="text-lg font-medium"><NavLink to='/dashboard'>Dashboard</NavLink></li>
         }
+        <li className="text-lg font-medium"><NavLink to='/help'>How To Help</NavLink></li>
     </>;
 
     const handleGoogleSignIn = () => {
@@ -53,9 +54,9 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <div className="flex justify-center items-center">
+                <div className="flex justify-center items-center gap-3">
                     <img className="h-12 w-12 rounded-xl" src={logo} alt="" />
-                    <a className="btn btn-ghost text-xl hidden sm:block :hidden ">WinterHope</a>
+                    <a className=" text-xl font-bold hidden sm:block :hidden text-orange-600">WinterHope</a>
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">
@@ -68,12 +69,12 @@ const Navbar = () => {
                     user ?
                         <div className="flex items-center gap-3">
                             <img className="h-12 w-12 rounded-full" src={user?.photoURL} alt="" />
-                            <button onClick={userSignOut} className="btn">Log-out</button>
+                            <button onClick={userSignOut} className="btn btn-outline btn-primary font-bold">Log-out</button>
                         </div>
                         :
                         <div className="flex gap-3">
-                            <Link onClick={handleGoogleSignIn} to='/' className="btn">Login With Google</Link>
-                            <Link to='/auth/login' className="btn">Login</Link>
+                            <Link onClick={handleGoogleSignIn} to='/' className="btn btn-outline btn-primary font-bold">Login With Google</Link>
+                            <Link to='/auth/login' className="btn btn-outline btn-primary font-bold ">Login</Link>
                         </div>
                 }
             </div>

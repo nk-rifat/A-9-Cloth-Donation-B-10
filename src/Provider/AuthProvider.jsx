@@ -26,7 +26,8 @@ const AuthProvider = ({ children }) => {
 
     const updateUserProfile = (updatedData) => {
         setLoading(true);
-        return updateProfile(auth.currentUser, updatedData);
+        return updateProfile(auth.currentUser, updatedData)
+            .finally(() => setLoading(false)); // Chain finally directly to the promise
     };
 
     const userSignOut = () => {
@@ -37,8 +38,8 @@ const AuthProvider = ({ children }) => {
 
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
-            setLoading(false);
             setUser(currentUser);
+            setLoading(false);
         })
 
         return () => {

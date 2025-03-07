@@ -77,7 +77,7 @@ const Register = () => {
                     }
 
                     <div className="form-control mt-6">
-                        <button className="btn btn-neutral w-full">Register</button>
+                        <button className="btn btn-outline btn-primary font-bold w-full">Register</button>
                     </div>
                 </form>
             </div>

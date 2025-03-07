@@ -1,9 +1,12 @@
 import { useContext, useState } from "react";
 import { Link, useNavigate} from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { FaEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa";
 
 const Login = () => {
     const navigate = useNavigate();
+    const [showPassword, setShowPassword] = useState(false);
 
     const {loginUser, setUser} = useContext(AuthContext);
     const [error, setError] = useState('');
@@ -19,13 +22,13 @@ const Login = () => {
         .then(result => {
             const user = result.user;
             setUser(user);
+            e.target.reset();
             navigate('/');
         })
         .catch(error => {
             const err = error.message;
             setError(err);
         });
-        e.target.reset();
     };
 
     return (
@@ -39,11 +42,18 @@ const Login = () => {
                         </label>
                         <input name="email" type="email" placeholder="email" className="input input-bordered" required />
                     </div>
-                    <div className="form-control">
+                    <div className="form-control relative">
                         <label className="label">
                             <span className="label-text">Password</span>
                         </label>
-                        <input name="password" type="password" placeholder="password" className="input input-bordered" required />  
+                        <input name="password" type={showPassword ? 'text' : 'password'} placeholder="password" className="input input-bordered" required /> 
+
+                        <button type="button" onClick={() => setShowPassword(!showPassword)} className="btn btn-ghost absolute right-0.5 top-6">
+                            {
+                                showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
+                            }
+                        </button>
+            
                         <label className="label">
                             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                         </label>
@@ -54,7 +64,7 @@ const Login = () => {
                     }
                     
                     <div className="form-control mt-6">
-                        <button className="btn btn-neutral w-full">Login</button>
+                        <button className="btn btn-outline btn-primary font-bold w-full">Login</button>
                     </div>
                 </form>
                 <p className="text-center font-semibold">Do not Have An Account ? <Link className="text-red-600 font-bold" to='/auth/register'>Register</Link></p>

@@ -8,6 +8,8 @@ import Login from "../Components/layout-component/Login";
 import Register from "../Components/layout-component/Register";
 import PrivateRoute from "./PrivateRoute";
 import DashboardLayout from "../layouts/DashboardLayout";
+import ProfileUpdate from "../Components/layout-component/ProfileUpdate";
+import HowToHelp from "../Components/layout-component/HowToHelp";
 
 const Router = createBrowserRouter([
     {
@@ -29,7 +31,17 @@ const Router = createBrowserRouter([
     },
     {
         path: '/dashboard',
-        element: <DashboardLayout></DashboardLayout>
+        element: <PrivateRoute>
+            <DashboardLayout></DashboardLayout>
+        </PrivateRoute>
+    },
+    {
+        path: '/updateProfile',
+        element: <ProfileUpdate></ProfileUpdate>
+    },
+    {
+        path: '/help',
+        element: <HowToHelp></HowToHelp>
     },
     {
         path: 'auth',

@@ -1,11 +1,17 @@
+import { useEffect } from "react";
 import AboutSection from "../Components/layout-component/AboutSection";
 import Banner from "../Components/layout-component/Banner";
 import Footer from "../Components/layout-component/Footer";
-import HowItWorks from "../Components/layout-component/HowItWorks";
 import Navbar from "../Components/layout-component/Navbar";
 import WhyThroughWinterHope from "../Components/layout-component/WhyThroughWinterHope";
+import Aos from "aos";
+import 'aos/dist/aos.css'
 
 const HomeLayOuts = () => {
+    useEffect(() => {
+        Aos.init({duration: 2000});
+    },[]);
+
     return (
         <div>
             <header>
@@ -19,13 +25,10 @@ const HomeLayOuts = () => {
             </header>
 
             <main>
-                <section>
+                <section data-aos = 'fade-right'>
                     <AboutSection></AboutSection>
                 </section>
-                <section>
-                    <HowItWorks></HowItWorks>
-                </section>
-                <section>
+                <section data-aos = 'fade-left'>
                     <WhyThroughWinterHope></WhyThroughWinterHope>
                 </section>
             </main>

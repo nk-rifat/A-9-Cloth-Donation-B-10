@@ -37,7 +37,7 @@ const WhyThroughWinterHope = () => {
     return (
         <section className="bg-gray-50 py-16 px-6">
             <div className="max-w-5xl mx-auto text-center">
-                <h2 className="text-4xl font-bold text-blue-900 mb-6">Why Donate Through WinterHope?</h2>
+                <h2 className="text-4xl font-bold text-green-600 mb-6">Why Donate Through WinterHope?</h2>
                 <p className="text-lg text-gray-700 mb-8">
                     WinterHope ensures that your donations create real impact. Here’s why you should choose us.
                 </p>
@@ -54,7 +54,7 @@ const WhyThroughWinterHope = () => {
                     ))}
                 </div>
 
-                <Link to='/campaigns' className="btn btn-primary mt-8">Donate Now</Link>
+                <Link to='/campaigns' className="btn btn-outline btn-primary font-bold mt-8">Donate Now</Link>
             </div>
         </section>
     );
