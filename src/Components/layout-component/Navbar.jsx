@@ -13,9 +13,8 @@ const Navbar = () => {
         <li className="text-lg font-medium"><NavLink to='/campaigns'>Campaigns</NavLink></li>
         {
             user &&
-            <li className="text-lg font-medium"><NavLink to='/help'>Dashboard</NavLink></li>
+            <li className="text-lg font-medium"><NavLink to='/dashboard'>Dashboard</NavLink></li>
         }
-        <li className="text-lg font-medium"><NavLink to='/dashboard'>How To Help</NavLink></li>
     </>;
 
     const handleGoogleSignIn = () => {
@@ -56,7 +55,7 @@ const Navbar = () => {
                 </div>
                 <div className="flex justify-center items-center">
                     <img className="h-12 w-12 rounded-xl" src={logo} alt="" />
-                    <a className="btn btn-ghost text-xl hidden sm:block ">WinterHope</a>
+                    <a className="btn btn-ghost text-xl hidden sm:block :hidden ">WinterHope</a>
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">

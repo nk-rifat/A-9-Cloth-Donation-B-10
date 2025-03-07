@@ -7,6 +7,7 @@ import AuthLayout from "../layouts/AuthLayout";
 import Login from "../Components/layout-component/Login";
 import Register from "../Components/layout-component/Register";
 import PrivateRoute from "./PrivateRoute";
+import DashboardLayout from "../layouts/DashboardLayout";
 
 const Router = createBrowserRouter([
     {
@@ -25,6 +26,10 @@ const Router = createBrowserRouter([
             <DonationDetails></DonationDetails>
         </PrivateRoute>,
         loader: () => fetch('/campaigns.json')
+    },
+    {
+        path: '/dashboard',
+        element: <DashboardLayout></DashboardLayout>
     },
     {
         path: 'auth',
