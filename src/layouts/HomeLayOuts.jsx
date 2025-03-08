@@ -1,19 +1,11 @@
-import { useEffect } from "react";
 import AboutSection from "../Components/layout-component/AboutSection";
 import Banner from "../Components/layout-component/Banner";
 import Footer from "../Components/layout-component/Footer";
 import Navbar from "../Components/layout-component/Navbar";
 import WhyThroughWinterHope from "../Components/layout-component/WhyThroughWinterHope";
-import Aos from "aos";
-import 'aos/dist/aos.css'
 
 const HomeLayOuts = () => {
-    useEffect(() => {
-        Aos.init({duration: 2000});
-    },[]);
-
-    console.log(import.meta.env.VITE_apikey)
-
+   
     return (
         <div>
             <header>
@@ -27,10 +19,10 @@ const HomeLayOuts = () => {
             </header>
 
             <main>
-                <section data-aos = 'fade-right'>
+                <section>
                     <AboutSection></AboutSection>
                 </section>
-                <section data-aos = 'fade-left'>
+                <section>
                     <WhyThroughWinterHope></WhyThroughWinterHope>
                 </section>
             </main>
