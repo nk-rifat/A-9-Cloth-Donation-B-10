@@ -12,6 +12,8 @@ const HomeLayOuts = () => {
         Aos.init({duration: 2000});
     },[]);
 
+    console.log(import.meta.env.VITE_apikey)
+
     return (
         <div>
             <header>
